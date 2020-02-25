@@ -179,13 +179,15 @@
 #showcase img{
   height: 400px;
   width: auto;
-  margin: 30vh 0 0 12vw;
-  /* border: 1px solid #111; */
+  margin: 30vh 0 0 -55vw;
   box-shadow: -22px -22px 10px #999;
+}
+.slideIn{
   animation: slideRight 3s forwards;
 }
 @keyframes slideRight{
   0%{margin-left: -55vw;}
+  100%{margin-left: 12vw;}
 }
 
 /* Skills */
@@ -245,6 +247,14 @@
   margin-left: 20vw;
   margin-top: -15vh;
 }
+.box ul{
+  padding-top: 2vh;
+  width: 6vw;
+  margin: auto;
+}
+.box p{
+  padding-top: 2vh;
+}
 
 /* Projects */
 #projects{
@@ -260,11 +270,55 @@
   width: 25vw;
   text-align: center;
   padding: 25px;
-  margin: 15vh 0 0 auto;
+  margin: 10vh 0 0 auto;
   border-bottom: 3px solid #999;
   background-image: linear-gradient(to right, rgba(250,250,250, 0), rgba(0,0,0,0.7), rgba(0,0,0,0.9));
 }
+.projects{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 85vw;
+  margin: auto;
+  margin-top: 12vh;
+}
+.proj{
+  width: 24vw;
+  height: 24vw;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.7);
+}
+.proj h3{
+  margin: 5px;
+}
+.proj img{
+  height: 200px;
+  width: auto;
+}
+.proj:hover{
+  transform: scale(1.1);
+  transition-duration: .5s;
+  box-shadow: -10px -10px 10px #333;
+}
+.proj:not(hover){
+  transform: scale(1);
+  transition-duration: .5s;
+}
 
+/* Footer */
+
+footer{
+  height: 10vh;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+footer p{
+  margin-top: 4vh;
+}
   /* Color Theme Swatches in Hex */
 .Copy-of-showcase-1-hex { color: #2976A7; }
 .Copy-of-showcase-2-hex { color: #303A3C; }
