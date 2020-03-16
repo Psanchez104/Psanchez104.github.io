@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
-/* Universal */
+/* Global */
 *{
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
 }
-.greenify{
-color: #03A688;
-}
 :root{
-    --first-color: #94D3F5;
-    --second-color: #333;
-    --third-color: #2976A7;
-    --fourth-color: #03A688;
+        --first-color: #94D3F5;
+        --second-color: #333;
+        --third-color: #2976A7;
+        --fourth-color: #03A688;
 }
+.container{
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+}
+.greenText{
+    color: var(--fourth-color);
+}
+
+
 
 /* Landing */
 #landing{
-    background-color: #333;
     background-image: linear-gradient(to right, rgba(51,51,51,0.5), rgba(51,51,51,0.5)), url(images/landing.jpg);
     background-size: cover;
     height: 100vh;
@@ -32,7 +38,6 @@ color: #03A688;
     color: #fff;
     font-size: 108px;
     font-weight: 100;
-    /* font-family: 'Source Sans Pro', sans-serif; */
     animation: zoomIn;
     animation-duration: 1s;
     position: absolute;
@@ -153,75 +158,84 @@ color: #03A688;
     20.1%, 100%{border-color: #03A688;}
   }
 
-  /* Showcase */
+
+
+   /* Showcase */
 #showcase{
-  height: 115vh;
-  background-color: var(--first-color);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  background-image: linear-gradient(to right, rgba(51,51,51,0), rgba(51,51,51,0)), url(images/showcase.jpg);
-  overflow: auto;
-}
-#showcase h1{
-  text-align: center;
-  color: var(--fourth-color);
-  font-size: 42px;
-  position: absolute;
-  top: 18vh;
-  left: 20vw;
-}
-#showcase #headshot{
-  height: 400px;
-  width: auto;
-  margin: 36vh 0 0 -55vw;
-  box-shadow: -10px -10px 10px rgba(153,153,153, 0.7);
-}
-#bio{
-  width: 30vw;
-  position: absolute;
-  top: 36vh;
-  right: 34vw;
-  font-size: 18px;
-  line-height: 1.7em;
-}
-#ima{
-  position: absolute;
-  bottom: 22vh;
-  left: 38vw;
-  font-size: 18px;
-  line-height: 1.7em;
-  list-style: none;
-}
-#ima li::before{
-  content: "\2022";
-  color: var(--fourth-color);
-  margin-left: -1em;
-  margin-right: .8em;
-}
-#contact{
-  position: absolute;
-  bottom: 1vh;
-  left: 2vh;
-  display: flex;
-}
-#contact img{
-  height: 50px;
-}
-#contact p{
-  font-size: 18px;
-  margin: 3.3vh 0 0 1vw;
-}
+    height: 110vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-image: url(images/showcase.jpg);
+    overflow: hidden;
+  }
+  #showcase .container{
+      margin-top: 10vh;
+      margin-left: 0;
+      width: 65vw;
+      padding: 10px;
+  }
+  #showcase h1{
+    text-align: center;
+    color: var(--fourth-color);
+    font-size: 250%;
+  }
+  #content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+  }
+  #showcase #headshot{
+    height: 400px;
+    width: auto;
+    margin-left: -55vw;
+    box-shadow: -10px -10px 10px rgba(153,153,153, 0.7);
+  }
+  #bio{
+    width: 30vw;
+    font-size: 18px;
+    line-height: 1.7em;
+  }
+  #ima{
+    margin-top: 4vh;
+    font-size: 18px;
+    line-height: 1.7em;
+  }
+  #ima li::before{
+    content: "\2022";
+    color: var(--fourth-color);
+    margin-right: .8em;
+  }
+  #ima ul{
+    list-style: none;
+    margin-left: 1em;
+  }
+  #contact{
+    position: absolute;
+    bottom: 1vh;
+    left: 2vh;
+    display: flex;
+  }
+  #contact img{
+    height: 50px;
+  }
+  #contact p{
+    font-size: 18px;
+    margin: 3.3vh 0 0 1vw;
+  }
+  
+  .slideIn{
+    animation: slideRight 3s forwards;
+  }
+  @keyframes slideRight{
+    0%{margin-left: -55vw;}
+    100%{margin-left: 12vw;}
+  }
 
-.slideIn{
-  animation: slideRight 3s forwards;
-}
-@keyframes slideRight{
-  0%{margin-left: -55vw;}
-  100%{margin-left: 12vw;}
-}
 
-/* Skills */
+
+  /* Skills */
 #skills{
   height: 80vh;
   background-attachment: fixed;
@@ -244,7 +258,6 @@ color: #03A688;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  /* grid-gap: 15px; */
 }
 .box{
   height: 250px;
@@ -287,6 +300,8 @@ color: #03A688;
   padding-top: 2vh;
 }
 
+
+
 /* Projects */
 #projects{
   height: 100vh;
@@ -321,6 +336,7 @@ color: #03A688;
 }
 .proj h3{
   margin: 5px;
+  font-size: 25px;
 }
 .proj img{
   height: 170px;
@@ -401,13 +417,15 @@ footer p{
 
 
 
-@media(max-width: 1024px){
+@media(max-width:1240px){
   #landing{
-    height: 75vh;
+    height: 30vh;
   }
+
   #title{
     animation-duration: 0s;
     animation-delay: 0s;
+    visibility: visible;
   }
   .lds-ripple{
     display: none;
@@ -415,20 +433,149 @@ footer p{
   #indicator{
     display: none;
   }
-  #showcase h1{
-    top: 10vh;
+  #showcase #headshot{
+    animation: none;
+    margin-left: 4vw;
+  }
+  .box:nth-child(1){
+    margin-left: 0;
+  }
+  .box:nth-child(2){
+    margin-left: 0;
+  }
+  .box:nth-child(3){
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .box:nth-child(4){
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .box:hover{
+    transform: none;
+    box-shadow: none;
+  }
+  .proj:hover{
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media(max-width:1024px){
+  #showcase{
+    height: 85vh;
+  }
+  #content{
+    width: 100vw;
+    margin-top: 5vh;
+    justify-content: space-around;
+    width: 80vw;
+    margin-left: 0vw;
+    align-items: flex-start;
+  }
+  #showcase .container{
+    width: 100vw;
+    margin-top: 5vh;
   }
   #showcase #headshot{
-    margin-top: 25vh;
-    margin-left: 12vw;
-    animation: none;
+    margin-left: 0;
+  }
+  #skills{
+    height: 85vh;
+  }
+  #boxes{
+    margin-top: 10vh;
+    grid-gap: 75px;
+  }
+  .proj{
+    height: 35vh;
+  }
+  .proj img{
+    width: 90%;
+  }
+}
+
+@media(max-width: 900px){
+  #showcase #headshot{
+    height: 300px;
   }
   #bio{
-    top: 25vh;
-    right: 20vw;
+    width: 40vw;
   }
-  #ima{
-    bottom: 45vh;
-    left: 55vw;
+  #skills{
+    margin-left: -3vh;
+  }
+  .projects{
+    margin-left: 10vw;
+  }
+  .proj{
+    height: 50vh;
+  }
+  .proj h3{
+    font-size: 20px;
+  }
+}
+
+@media(max-width:455px){
+  #landing{
+    height: 20vh;
+  }
+  #title{
+    font-size: 55px;
+  }
+  #showcase{
+    height: 180vh;
+  }
+  #showcase .container{
+    padding: 0;
+  }
+  #content{
+    flex-direction: column;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #ima ul{
+    text-align: left;
+  }
+  #bio{
+    width: 80vw;
+    text-align: center;
+    margin-top: 5vh;
+  }
+  #skills{
+    height: 225vh;
+    margin: 0;
+  }
+  #skills h2{
+    font-size: 22px;
+  }
+  #boxes{
+    display: flex;
+    flex-direction: column;
+  }
+  .box{
+    margin: 15px;
+  }
+  #projects{
+    height: 170vh;
+  }
+  #projects h2{
+    font-size: 22px;
+  }
+  .projects{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .proj{
+    width: 65vw;
+    height: 35vh;
+    margin-left: auto;
+    margin-top: 5vh;
+  }
+  .proj p{
+    display: none;
   }
 }

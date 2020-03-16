@@ -9,15 +9,7 @@ const headshotOptions = {
 const headshotObserver = new IntersectionObserver(function (entries, headshotObserver) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            // console.log("over");
             headshot.classList.add('slideIn');
-            // headshot.style.webkitAnimationPlayState = "paused";
-            // console.log(headshot.classList);
-        } else {
-            // console.log("not over");
-            // headshot.style.webkitAnimationPlayState = "running";
-            // headshot.classList.add('slideIn');
-            // console.log(headshot.classList);
         }
     });
 }, headshotOptions);
