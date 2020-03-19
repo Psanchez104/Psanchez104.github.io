@@ -487,6 +487,12 @@ footer p{
     margin-top: 10vh;
     grid-gap: 75px;
   }
+  .box{
+    margin-right: 0;
+  }
+  .box ul{
+    list-style: none;
+  }
   .proj{
     height: 35vh;
   }
@@ -525,6 +531,7 @@ footer p{
   }
   #showcase{
     height: 180vh;
+    background-position: -345px 0px;
   }
   #showcase .container{
     padding: 0;
@@ -548,20 +555,20 @@ footer p{
     margin: 0;
   }
   #skills h2{
-    font-size: 22px;
+    font-size: 20px;
   }
   #boxes{
     display: flex;
     flex-direction: column;
   }
   .box{
-    margin: 15px;
+    margin-bottom: 15px;
   }
   #projects{
     height: 170vh;
   }
   #projects h2{
-    font-size: 22px;
+    font-size: 20px;
   }
   .projects{
     margin: 0;
